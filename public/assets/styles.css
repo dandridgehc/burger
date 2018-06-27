@@ -1,0 +1,67 @@
+body {
+	background: #E8E11C;
+}
+img {
+	height: 150px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+.container {
+	display: inline-block;
+	width: 33%;
+	vertical-align: top;
+
+}
+
+.containerTitle {
+	text-align: center;
+}
+
+ul {
+	margin-left: 10px;
+	padding-left: 0px;
+}
+
+.sameLine {
+	display: inline-block;
+}
+
+.burgerName {
+  background: #fff;
+  line-height: 20px;
+  width: 280px;
+  margin: 5px 0px;
+  padding: 5px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+h2 {
+	font-size: 25px;
+}
+
+.create-update-form {
+  margin: 5px, auto;
+  padding: 5px;
+}
+
+#bu {
+	width: 350px;
+	height: 100px;
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+#add {
+	margin-top: 30px;
+	width: 250px;
+	height: 40px;
+	font-size: 20px
+}
+
+.enterForm {
+  text-align: center;
+}

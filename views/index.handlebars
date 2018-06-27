@@ -1,0 +1,70 @@
+<div class="header-container">
+  <img id="hamburger-image" src="assets/burger.jpg" alt="Burger image.">
+  <header>Eat-Da-Burger!</header>
+</div>
+
+<div class="main-container">
+  <section id="available-hamburgers">
+    <ul id="burger-list">
+      {{#each burgers}}
+        {{#unless devoured}}
+          <li class="available-burger">
+            <span class="burgers">
+              {{id}}
+              {{burger_name}}
+            </span>
+            <span id="devour-button">
+              <form action="/{{id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button class="devour-button" type="submit">Devour it!</button>
+              </form>
+            </span>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </section>
+  <section id="devoured-hamburgers">
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+          <li class="devour-burger">
+            {{id}}
+            {{burger_name}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </section>
+  <section id ="new-burger">
+    <form class="add-burger-form">
+
+      <div class="form-group">
+        <textarea id="new-burger-text" rows="4" name="burger_name" required></textarea>
+      </div>
+
+      <button type="submit" id="new-burger-submit">Submit</button>
+    </form>
+
+    <p>Enter a burger you want to eat. Click the "Submit" button.</p>
+
+  </section>
+</div>
+
+<script>
+$(".add-burger-form").on("submit", function(event){
+  event.preventDefault()
+
+  var burgerName = $("#new-burger-text").val().trim()
+  console.log(burgerName)
+
+  var body = {
+    name:burgerName
+  }
+  $.post("/add-burger", body, function(response){
+    console.log(response)
+    location.reload()
+  })
+})
+
+</script>

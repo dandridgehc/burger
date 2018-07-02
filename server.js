@@ -19,7 +19,7 @@ app.set("view engine", "handlebars")
 var port = process.env.PORT || 3000
 
 if(process.env.JAWSDB_URL){
-    connection = mysql.createConnection(proccess.env.JAWSDB_URL)
+    connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
     var connection = mysql.createConnection({
     host: "localhost",

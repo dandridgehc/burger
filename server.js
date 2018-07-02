@@ -17,12 +17,19 @@ app.set("view engine", "handlebars")
 
 //set up PORT variable and connect configs
 var port = process.env.PORT || 3000
-var connection = mysql.createConnection({
+
+if(process.env.JAWSDB_URL){
+    connection = mysql.createConnection(proccess.env.JAWSDB_URL)
+} else {
+    var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
     database: "burger"
-})
+    })
+}
+
+
 
 
 //set up connection

@@ -63,7 +63,7 @@ $(".add-burger-form").on("submit", function(event){
   }
   $.post("/add-burger", body, function(response){
     console.log("response /add-burger index:", response)
-    //location.reload()
+    location.reload()
   })
 })
 

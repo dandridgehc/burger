@@ -1,41 +1,47 @@
 <div class="header-container">
-  {{!-- <img id="hamburger-image" src="assets/burger.jpg" alt="Burger image."> --}}
+  <img id="hamburger-image" src="assets/burger.jpg" alt="Burger image.">
   <header>Eat-Da-Burger!</header>
 </div>
 
 <div class="main-container">
   <section id="available-hamburgers">
-    <ul id="burger-list">
+    
       {{#each burgers}}
         {{#unless devoured}}
-          <li class="available-burger">
+          <p class="available-burger">
             <span class="burgers">
               {{id}}
               {{burger_name}}
             </span>
             <span id="devour-button">
-              <form action="/{{id}}?_method=PUT" method="POST">
+             
                 <input type="hidden" name="devoured" value="true">
-                <button class="devour-button" type="submit">Devour it!</button>
-              </form>
+                <button data="{{item_id}}" class="devour-button" type="submit">Devour it!</button>
+              
             </span>
-          </li>
+          </p>
         {{/unless}}
       {{/each}}
-    </ul>
+   
   </section>
+
+
+{{!-- Devoured --}}
   <section id="devoured-hamburgers">
-    <ul>
+    
       {{#each burgers}}
         {{#if devoured}}
-          <li class="devour-burger">
+          <p class="devour-burger">
             {{id}}
             {{burger_name}}
-          </li>
+          </p>
         {{/if}}
       {{/each}}
-    </ul>
+    
   </section>
+</div>
+
+
   <section id ="new-burger">
     <form class="add-burger-form">
 
@@ -49,7 +55,7 @@
     <p>Enter a burger you want to eat. Click the "Submit" button.</p>
 
   </section>
-</div>
+
 
 <script>
 $(".add-burger-form").on("submit", function(event){
@@ -65,6 +71,11 @@ $(".add-burger-form").on("submit", function(event){
     console.log("response /add-burger index:", response)
     location.reload()
   })
+})
+
+$(".devour-button").on("click", function(){
+  var id = $(this).attr("data")
+  console.log("id", id)
 })
 
 </script>

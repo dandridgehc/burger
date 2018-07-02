@@ -1,5 +1,5 @@
 <div class="header-container">
-  <img id="hamburger-image" src="assets/burger.jpg" alt="Burger image.">
+  {{!-- <img id="hamburger-image" src="assets/burger.jpg" alt="Burger image."> --}}
   <header>Eat-Da-Burger!</header>
 </div>
 
@@ -56,14 +56,14 @@ $(".add-burger-form").on("submit", function(event){
   event.preventDefault()
 
   var burgerName = $("#new-burger-text").val().trim()
-  console.log(burgerName)
+  console.log("new burger name, index:,", burgerName)
 
   var body = {
     name:burgerName
   }
   $.post("/add-burger", body, function(response){
-    console.log(response)
-    location.reload()
+    console.log("response /add-burger index:", response)
+    //location.reload()
   })
 })
 

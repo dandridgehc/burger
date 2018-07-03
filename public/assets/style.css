@@ -1,11 +1,11 @@
 body {
 	background: #E8E11C;
 }
-img {
+/* img {
 	height: 150px;
 	margin-top: 30px;
 	margin-bottom: 15px;
-}
+} */
 
 .container {
 	display: inline-block;
@@ -74,4 +74,13 @@ h2 {
 
 .devour-burger {
 	list-style: none;
+}
+
+#header {
+	font-size: 100px
+}
+
+#hamburger-image {
+	width:200px;
+	height:200px;
 }

@@ -1,7 +1,9 @@
 <div class="header-container">
-  <img id="hamburger-image" src="assets/burger.jpg" alt="Burger image.">
-  <header>Eat-Da-Burger!</header>
+  <img id="hamburger-image" class="img-thumbnail rounded mx-auto d-block" src="assets/burger.jpg" alt="Burger image.">
+  <header id="header" class="jumbotron jumbotron-fluid">Eat-Da-Burger!</header>
 </div>
+
+<hr>
 
 <div class="main-container">
   <section id="available-hamburgers">
@@ -9,7 +11,7 @@
       {{#each burgers}}
         {{#unless devoured}}
           <p class="available-burger">
-            <span class="burgers">
+            <span class="burgers btn btn-success">
               {{id}}
               {{burger_name}}
             </span>
@@ -31,7 +33,7 @@
     
       {{#each burgers}}
         {{#if devoured}}
-          <p class="devour-burger">
+          <p class="devour-burger btn btn-danger">
             {{id}}
             {{burger_name}}
           </p>
@@ -46,13 +48,14 @@
     <form class="add-burger-form">
 
       <div class="form-group">
-        <textarea id="new-burger-text" rows="4" name="burger_name" required></textarea>
+        <label for="newburgerform">Create New Burgers</label>
+        <textarea id="new-burger-text" class ="form-text text-muted" placeholder="Ex/ Maui Wowie Burger" rows="4" name="burger_name" required></textarea>
       </div>
 
       <button type="submit" id="new-burger-submit">Submit</button>
     </form>
 
-    <p>Enter a burger you want to eat. Click the "Submit" button.</p>
+    <p>Click the "Submit" button when finished.</p>
 
   </section>
 
